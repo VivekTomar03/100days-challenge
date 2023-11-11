@@ -1,0 +1,183 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .music-card {
+    width: 400px;
+    height: 200px;
+    background-color: #000; 
+    border-radius: 15px;
+    box-shadow: 0 0 4rem rgba(255, 69, 0, 0.8); 
+    overflow: hidden;
+    position: relative;
+    animation: slideIn 0.5s ease-out;
+
+    transition: transform 0.5s, box-shadow 0.5s; 
+  }
+  
+  .music-card:hover {
+    transform: rotateX(20deg) rotateY(10deg); 
+    box-shadow: 0 0 4rem rgba(255, 69, 0, 0.8); 
+  }
+  
+  .music-cover {
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px 0 0 15px;
+    float: left;
+  }
+  
+  .music-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .music-details {
+    width: 60%;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 20px; 
+    transform: translateZ(50px);
+    float: left;
+    margin-top: 1.5rem;
+  }
+  
+  h3, p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #ff4500; 
+  }
+  
+  .progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    width: 50%; 
+    height: 100%;
+    background-color: #ff4500; 
+    border-radius: 5px;
+  }
+  
+  .controls {
+    margin-top: 10px;
+  }
+  
+  .controls i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #ff4500; 
+    cursor: pointer;
+  }
+  
+  .controls i:hover {
+    color: #ffcc00; 
+  }
+  
+  .song-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 10px;
+    color: #666;
+    width: 100%; 
+  }
+  
+  .played-count, .total-songs, .time {
+    margin: 0 5px;
+  }
+  
+ 
+@keyframes slideIn {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .music-details h3, .music-details p {
+    animation: slideIn 0.5s ease-out;
+    
+  }
+    
+  .music-details h3, .music-details p:hover {
+    animation: slideIn 0.5s ease-out;
+    
+  }
+  
+
+@keyframes fillProgressBar {
+    from {
+      width: 0;
+    }
+    to {
+      width: 50%;
+    }
+  }
+  
+  .progress-bar {
+    animation: fillProgressBar 2s ease-in-out;
+  }
+  
+  
+@keyframes rotateImage {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  .music-cover img {
+    animation: rotateImage 6s linear infinite; 
+  }
+  
+ 
+@keyframes shadowPulse {
+    0%, 100% {
+      box-shadow: 0 0 4rem rgba(255, 69, 0, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 4rem rgba(255, 69, 0, 0.5);
+    }
+  }
+  
+  .music-card {
+    animation: shadowPulse 3s infinite; /* Apply the animation to the music card */
+  }
+  
+  
+@keyframes buttonPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .controls i {
+    animation: buttonPulse 1.5s infinite; /* Apply the animation to the control buttons */
+  }
+  
+ 
+  
